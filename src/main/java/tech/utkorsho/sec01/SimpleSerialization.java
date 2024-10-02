@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class SimpleSerialization {
-    private static final Logger log = LoggerFactory.getLogger(SimpleProtoDemo.class);
+    private static final Logger log = LoggerFactory.getLogger(SimpleSerialization.class);
     private static final Path PATH = Path.of("person.out");
 
     public static void main(String[] args) throws IOException {
@@ -32,10 +32,10 @@ public class SimpleSerialization {
     }
 
     public static void serialize(Person person) throws IOException {
-        try(var stream = Files.newInputStream(PATH)) {
-            person.writeTo(stream);
-        }
-        //person.writeTo(Files.newOutputStream(PATH));
+//        try(var stream = Files.newInputStream(PATH)) {
+//            person.writeTo(stream);
+//        }
+        person.writeTo(Files.newOutputStream(PATH));
 
     }
 
